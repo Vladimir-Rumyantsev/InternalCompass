@@ -7,6 +7,8 @@ welcome_text = ('*Привет! Давай начнём.*\n\nНаш мир бы�
                 ' технологиями. Это вызывает тревожность, стресс и депрессию\n\nВ этой войне человека и современного '
                 'мира мы будем вашей поддержкой: сделаем вас сильнее и вы сможете постоять за себя в этой борьбе🤼‍♂')
 
+photo_path = 'compass.jpg'
+
 where_to_start_button = types.InlineKeyboardButton(text='Здорово! С чего мне начать?', callback_data='button_01')
 where_to_start_markup = types.InlineKeyboardMarkup()
 where_to_start_markup.add(where_to_start_button)
@@ -24,23 +26,25 @@ hobby_button = types.InlineKeyboardButton(text='Хобби', callback_data='butt
 relaxation_button = types.InlineKeyboardButton(text='Релаксация', callback_data='button_09')
 other_protocols_button = types.InlineKeyboardButton(text='Другие протоколы', callback_data='button_10')
 sections_for_training_markup = types.InlineKeyboardMarkup()
-sections_for_training_markup.add(sport_button, nutrition_button, sleep_button)
-sections_for_training_markup.add(meditation_button, relationships_button, work_button)
-sections_for_training_markup.add(hobby_button, relaxation_button, other_protocols_button)
+sections_for_training_markup.add(sport_button, nutrition_button)
+sections_for_training_markup.add(sleep_button, meditation_button)
+sections_for_training_markup.add(relationships_button, work_button)
+sections_for_training_markup.add(hobby_button, relaxation_button)
+sections_for_training_markup.add(other_protocols_button)
 
-section_selection_button = types.InlineKeyboardButton(text='Вернуться к выбору секции', callback_data='button_11')
-section_selection_markup = types.InlineKeyboardMarkup()
-section_selection_markup.add(section_selection_button)
+main_button = types.InlineKeyboardButton(text='Вернуться к выбору секции', callback_data='button_11')
+main_markup = types.InlineKeyboardMarkup()
+main_markup.add(main_button)
 
 benefit_button = types.InlineKeyboardButton(text='Польза', callback_data='button_12')
 benefit_markup = types.InlineKeyboardMarkup()
 benefit_markup.add(benefit_button)
-benefit_markup.add(section_selection_button)
+benefit_markup.add(main_button)
 
 how_to_do_it_button = types.InlineKeyboardButton(text='Как делать?', callback_data='button_13')
 how_to_do_it_markup = types.InlineKeyboardMarkup()
 how_to_do_it_markup.add(how_to_do_it_button)
-how_to_do_it_markup.add(section_selection_button)
+how_to_do_it_markup.add(main_button)
 
 sport_text = (
     '*Спорт\n\nСпорт и физические нагрузки* — это любая физическая активность.\n\nЭто может включать в себя '
