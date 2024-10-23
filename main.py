@@ -1,7 +1,8 @@
 import os
 import datetime
-import time
 import data
+import time
+
 
 ex_errors = 0
 
@@ -17,7 +18,6 @@ def main():
             global ex_errors
             if ex_errors < len(sleep):
                 ex_errors += 1
-
             write_logs(f'{(datetime.datetime.today()).strftime("%d.%m.%Y %H:%M:%S")} -> Exception\n{ex}')
             time.sleep(sleep[ex_errors - 1])
 
